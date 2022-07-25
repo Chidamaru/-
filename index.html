@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+ 
+<html>
+    <html lang="ja">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheet.css" >
+    <title>電卓</title>
+</html>
+<body>
+    <div class="calculation">
+        <h3 id="result"></h3> 
+    </div>
+    <div class="firstLine">
+        <button onclick=clickbutton(this)>7</button>
+        <button onclick=clickbutton(this)>8</button>
+        <button onclick=clickbutton(this)>9</button>
+        <button onclick=clickbutton(this)>+</button>
+    </div>
+    <div class="secondLine">
+        <button onclick=clickbutton(this) >4</button>
+        <button onclick=clickbutton(this) >5</button>
+        <button onclick=clickbutton(this) >6</button>
+        <button onclick=clickbutton(this)>-</button>
+    </div>
+    <div class="thirdLine">
+        <button onclick=clickbutton(this) >1</button>
+        <button onclick=clickbutton(this) >2</button>
+        <button onclick=clickbutton(this)>3</button>
+        <button onclick=clickbutton(this)>*</button>
+    </div>
+    <div class="fourthLine">
+        <button onclick=clickbutton(this) >0</button>
+        <button onclick=clickbutton(this)>00</button>
+        <button onclick=clickbutton(this)>.</button>
+        <button onclick=clickbutton(this)>/</button>
+    </div>
+    <div class="fifthLine">
+        <button onclick=clickbutton(this)>AC</button>
+        <button onclick=clickbutton(this)>=</button>
+    </div>
+    
+</body>
+
+<script>
+
+
+function clickbutton(target){
+    let result = document.getElementById("result")
+    let target_value = target.innerHTML;
+    
+    
+    if (target_value == "AC") {
+        result.innerHTML = "0"
+    } else if (target_value == "=") {
+        result.innerHTML = eval(result.innerHTML)
+    } else {
+        let last_value = result.innerHTML.slice(-1) ;
+        let opetretor = ["+",　"-" , "*" , "/"];
+        console.log(opetretor.includes("+"))
+        
+
+  if ( opetretor = true && last_value == "+"||　"-" ||"*" || "/"){
+      result.innerHTML = result.innerHTML.slice(0, -1) + target_value
+      console.log(result);
+  }
+        
+        else if (result.innerHTML == "0") {
+              result.innerHTML = target_value
+         } else {
+             result.innerHTML += target_value
+        }
+       }
+}
+
+
+  </script>
